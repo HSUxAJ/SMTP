@@ -7,26 +7,23 @@ import openpyxl
 import logging
 import os
 
-# 创建日志记录器
+# 創建logger
 logger = logging.getLogger('email_app')
 logger.setLevel(logging.DEBUG)
 
-# 创建一个文件处理器，用于将日志记录到文件
+# 將logger存進文檔
 file_handler = logging.FileHandler('email_app.log')
 file_handler.setLevel(logging.DEBUG)
 
-# 创建一个控制台处理器，用于在控制台显示日志消息
+# 在cmd顯示logger
 console_handler = logging.StreamHandler()
 console_handler.setLevel(logging.DEBUG)
 
-# 创建一个格式化程序，用于格式化日志消息
 formatter = logging.Formatter('%(asctime)s-%(name)s-%(levelname)s-%(message)s')
 
-# 设置格式化程序到两个处理器
 file_handler.setFormatter(formatter)
 console_handler.setFormatter(formatter)
 
-# 将处理器添加到日志记录器
 logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
